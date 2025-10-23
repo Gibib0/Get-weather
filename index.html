@@ -11,20 +11,25 @@
 	<div class="container">
 		<h1>Weather map</h1>
 
-		<div class="input-section">
-			<div class="input-group">
-				<label>City name</label>
-				<input type="text" name="cityname" id="cityName" placeholder="Enter city name" disabled>
-			</div>
+		<div class="input-group">
+			<label>City name</label>
+			<input type="text" name="cityname" id="cityName" placeholder="Enter city name" disabled>
+		</div>
 
-			<div class="input-group">
-				<label>City ID</label>
-				<input type="text" name="cityid" id="cityId" placeholder="Enter city ID" disabled>
-			</div>
-
+		<div class="input-group">
+			<label>City ID</label>
+			<input type="text" name="cityid" id="cityId" placeholder="Enter city ID" disabled>
+		</div>
+		
+		<div class="radio-section">
 			<div class="radio-group">
-				<label><input type="radio" name="searchType" value="name">City name</label>
-				<label><input type="radio" name="searchType" value="id">City ID</label>
+				<label>City name</label>
+				<input type="radio" name="searchType" value="name">
+			</div>
+				
+			<div class="radio-group">
+				<label>City ID</label>
+				<input type="radio" name="searchType" value="id">
 			</div>
 		</div>
 
