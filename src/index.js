@@ -12,7 +12,7 @@ const temperature = document.getElementById('temperature')
 const wind = document.getElementById('wind')
 const humidity = document.getElementById('humidity')
 
-const api = '8df86b370cc7920a7229450f28f03a5d'
+const api = '9bf4773fb593f012dfa6f7b862628576'
 
 radios.forEach(radio => {
 	radio.addEventListener('change', () => {
@@ -20,10 +20,14 @@ radios.forEach(radio => {
 			cityNameInput.disabled = false
 			cityIdInput.disabled = true
 			cityIdInput.value = ''
+			cityIdInput.placeholder = ''
+			cityNameInput.placeholder = 'Enter city name'
 		} else if (radio.value === 'id') {
 			cityNameInput.disabled = true
 			cityIdInput.disabled = false
 			cityNameInput.value = ''
+			cityNameInput.placeholder = ''
+			cityIdInput.placeholder = 'Enter city ID'
 		}
 	})
 })
@@ -43,10 +47,10 @@ weatherbtn.addEventListener('click', async () => {
 
 	if (!cityNameInput.disabled && cityNameInput.value.trim()) {
 		const city = cityNameInput.value.trim()
-		url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+		url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`
 	} else if (!cityIdInput.disabled && cityIdInput.value.trim()) {
 		const id = cityIdInput.value.trim()
-		url = `https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${apiKey}&units=metric`
+		url = `https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${api}&units=metric`
 	} else {
 		console.log('Select a search method and enter data please.');
 		return
@@ -70,6 +74,8 @@ cancelbtn.addEventListener('click', () => {
 	cityIdInput.value = ''
 	cityNameInput.disabled = true
 	cityIdInput.disabled = true
+	cityNameInput.placeholder = ''
+	cityIdInput.placeholder = ''
 	radios.forEach(r => (r.checked = false))
 
 	temperature.textContent = '-'
