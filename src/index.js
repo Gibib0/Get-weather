@@ -50,7 +50,7 @@ weatherbtn.addEventListener('click', async () => {
 		url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`
 	} else if (!cityIdInput.disabled && cityIdInput.value.trim()) {
 		const id = cityIdInput.value.trim()
-		url = `https://api.openweathermap.org/data/2.5/weather?q=${id}&appid=${api}&units=metric`
+		url = `https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${api}&units=metric`
 	} else {
 		console.log('Select a search method and enter data please.');
 		return
